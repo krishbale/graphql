@@ -5,6 +5,8 @@ import { PetModule } from './pet/pet.module';
 import { GraphQLModule } from '@nestjs/graphql';
 import { ApolloDriver } from '@nestjs/apollo';
 import { TypeOrmModule } from '@nestjs/typeorm';
+import { OwnerModule } from './owner/owner.module';
+import { PetService } from './pet/pet.service';
 
 @Module({
   imports: [
@@ -23,6 +25,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
       entities: [__dirname + '/**/*.entity{.ts,.js}'],
       synchronize: true,
     }),
+    OwnerModule,
   ],
   controllers: [AppController],
   providers: [AppService],

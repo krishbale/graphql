@@ -20,8 +20,9 @@ export class PetResolver {
   pets(): Promise<Pet[]> {
     return this.petservice.findAll();
   }
+
   @Mutation(() => Pet)
-  createpet(@Args('createPetInput') createPetInput: Createpetinput) {
+  createpet(@Args('createpetinput') createPetInput: Createpetinput) {
     return this.petservice.createnewpet(createPetInput);
   }
 
